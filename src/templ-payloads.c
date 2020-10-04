@@ -73,7 +73,7 @@ struct PayloadUDP_Default hard_coded_udp_payloads[] = {
     
     {53, 65536, 0x1f, 0, dns_set_cookie,
         /* 00 */"\x50\xb6"  /* transaction id */
-        /* 02 */"\x01\x20"  /* quer y*/
+        /* 02 */"\x01\x20"  /* query */
         /* 04 */"\x00\x01"  /* query = 1 */
         /* 06 */"\x00\x00\x00\x00\x00\x00"
         /* 0c */"\x07" "version"  "\x04" "bind" "\x00"
@@ -119,17 +119,17 @@ struct PayloadUDP_Default hard_coded_udp_payloads[] = {
             "MAN: \"ssdp:discover\"\r\n"
             "MX: 1\r\n"
             "ST: ssdp:all\r\n"
-            "USER-AGENT: unix/1.0 UPnP/1.1 masscan/1.x\r\n"},
+            "USER-AGENT: linux/1.0 UPnP/1.1 resrch/1.x\r\n"},
 
     {5060, 65536, 0xFFFFFFFF, 0, 0,
-        "OPTIONS sip:carol@chicago.com SIP/2.0\r\n"
-        "Via: SIP/2.0/UDP pc33.atlanta.com;branch=z9hG4bKhjhs8ass877\r\n"
+        "OPTIONS sip:larry@newyork.com SIP/2.0\r\n"
+        "Via: SIP/2.0/UDP pc33.queens1.com;branch=z9hG4bKhjhs8ass877\r\n"
         "Max-Forwards: 70\r\n"
-        "To: <sip:carol@chicago.com>\r\n"
-        "From: Alice <sip:alice@atlanta.com>;tag=1928301774\r\n"
+        "To: <sip:Larry@newyork.com>\r\n"
+        "From: Alice <sip:larry@queens1.com>;tag=1928301774\r\n"
         "Call-ID: a84b4c76e66710\r\n"
         "CSeq: 63104 OPTIONS\r\n"
-        "Contact: <sip:alice@pc33.atlanta.com>\r\n"
+        "Contact: <sip:larry@fork.queens1.com>\r\n"
         "Accept: application/sdp\r\n"
         "Content-Length: 0\r\n"
     },
