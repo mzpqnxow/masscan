@@ -818,7 +818,7 @@ tcpcon_send_packet(
     /* Put this buffer on the transmit queue. Remember: transmits happen
      * from a transmit-thread only, and this function is being called
      * from a receive-thread. Therefore, instead of transmiting ourselves,
-     * we hae to queue it up for later transmission. */
+     * we have to queue it up for later transmission. */
     for (err=1; err; ) {
         err = rte_ring_sp_enqueue(tcpcon->transmit_queue, response);
         if (err != 0) {
