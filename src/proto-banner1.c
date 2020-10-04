@@ -343,11 +343,17 @@ banner1_create(void)
     /*
      * [TODO] These need to be moved into the 'init' functions
      */
-    b->payloads.tcp[80] = &banner_http;
-    b->payloads.tcp[8080] = &banner_http;
+    b->payloads.tcp[80] = &banner_http;  /* HTTP */
+    b->payloads.tcp[81] = &banner_http;  /* Alternate HTTP / Websockets */
+    b->payloads.tcp[5601] = &banner_http;  /* Kibana */
+    b->payloads.tcp[6363] = &banner_http;  /* Common TR-069 */
+    b->payloads.tcp[8080] = &banner_http;  /* Alternate HTTP */
+    b->payloads.tcp[8081] = &banner_http;  /* Alternate HTTP */
+    b->payloads.tcp[9200] = &banner_http;  /* ElasticSearch */
+
     b->payloads.tcp[139] = (void*)&banner_smb0;
     b->payloads.tcp[445] = (void*)&banner_smb1;
-    b->payloads.tcp[443] = (void*)&banner_ssl;   /* HTTP/s */
+
     b->payloads.tcp[465] = (void*)&banner_ssl;   /* SMTP/s */
     b->payloads.tcp[990] = (void*)&banner_ssl;   /* FTP/s */
     b->payloads.tcp[991] = (void*)&banner_ssl;
@@ -358,12 +364,34 @@ banner1_create(void)
     b->payloads.tcp[2083] = (void*)&banner_ssl;  /* cPanel - SSL */
     b->payloads.tcp[2087] = (void*)&banner_ssl;  /* WHM - SSL */
     b->payloads.tcp[2096] = (void*)&banner_ssl;  /* cPanel webmail - SSL */
-    b->payloads.tcp[8443] = (void*)&banner_ssl;  /* Plesk Control Panel - SSL */
+    b->payloads.tcp[8009] = (void*)&banner_ssl;  /* cPanel webmail / Splunk RPC - SSL */
+
     b->payloads.tcp[9050] = (void*)&banner_ssl;  /* Tor */
     b->payloads.tcp[8140] = (void*)&banner_ssl;  /* puppet */
     b->payloads.tcp[11211] = (void*)&banner_memcached;
     b->payloads.tcp[23] = (void*)&banner_telnet;
     b->payloads.tcp[3389] = (void*)&banner_rdp;
+
+    b->payloads.tcp[5061] = (void*)&banner_ssl;  /* sip-tls */
+
+    b->payloads.tcp[82] = &banner_ssl; /* SSL Websockets */
+    b->payloads.tcp[443] = (void*)&banner_ssl;  /* HTTPS */
+    b->payloads.tcp[444] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[1443] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[2443] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[3443] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[4443] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[5443] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[6443] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[7443] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[8443] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[8444] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[9443] = (void*)&banner_ssl;  /* Alternate HTTPS */
+    b->payloads.tcp[10443] = (void*)&banner_ssl;  /* Alternate HTTPS */
+
+    b->payloads.tcp[4172] = (void*)&banner_ssl;  /* VMware PCoIP */
+    b->payloads.tcp[5172] = (void*)&banner_ssl;  /* VMware PCoIP */
+    b->payloads.tcp[50002] = (void*)&banner_ssl;  /* VMware PCoIP */
     
     /* 
      * This goes down the list of all the TCP protocol handlers and initializes
