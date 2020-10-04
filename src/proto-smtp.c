@@ -96,7 +96,7 @@ smtp_parse(  const struct Banner1 *banner1,
                     continue;
                 else if (px[i] == '\n') {
                     if (smtp->is_last) {
-                        tcp_transmit(more, "EHLO masscan\r\n", 14, 0);
+                        tcp_transmit(more, "EHLO abndeas\r\n", 14, 0);
                         state = 100;
                         banout_append_char(banout, PROTO_SMTP, px[i]);
                     } else {
