@@ -32,7 +32,7 @@ static unsigned char default_tcp_template[] =
     "\x00\x2c"      /* total length = 44 bytes */
     "\x00\x00"      /* identification */
     "\x00\x00"      /* fragmentation flags */
-    "\xFF\x06"      /* TTL=255, proto=TCP */
+    "\x40\x06"      /* TTL=64, proto=TCP */
     "\xFF\xFF"      /* checksum */
     "\0\0\0\0"      /* source address */
     "\0\0\0\0"      /* destination address */
@@ -58,7 +58,7 @@ static unsigned char default_udp_template[] =
     "\x00\x1c"      /* total length = 28 bytes */
     "\x00\x00"      /* identification */
     "\x00\x00"      /* fragmentation flags */
-    "\xFF\x11"      /* TTL=255, proto=UDP */
+    "\x40\x11"      /* TTL=255, proto=UDP */
     "\xFF\xFF"      /* checksum */
     "\0\0\0\0"      /* source address */
     "\0\0\0\0"      /* destination address */
@@ -78,7 +78,7 @@ static unsigned char default_sctp_template[] =
     "\x00\x34"      /* total length = 52 bytes */
     "\x00\x00"      /* identification */
     "\x00\x00"      /* fragmentation flags */
-    "\xFF\x84"      /* TTL=255, proto = SCTP */
+    "\x40\x84"      /* TTL=255, proto = SCTP */
     "\x00\x00"      /* checksum */
     "\0\0\0\0"      /* source address */
     "\0\0\0\0"      /* destination address */
@@ -107,7 +107,7 @@ static unsigned char default_icmp_ping_template[] =
     "\x00\x4c"      /* total length = 76 bytes */
     "\x00\x00"      /* identification */
     "\x00\x00"      /* fragmentation flags */
-    "\xFF\x01"      /* TTL=255, proto=ICMP */
+    "\x40\x01"      /* TTL=255, proto=ICMP */
     "\xFF\xFF"      /* checksum */
     "\0\0\0\0"      /* source address */
     "\0\0\0\0"      /* destination address */
@@ -140,7 +140,7 @@ static unsigned char default_icmp_timestamp_template[] =
 "\x00\x28"      /* total length = 84 bytes */
 "\x00\x00"      /* identification */
 "\x00\x00"      /* fragmentation flags */
-"\xFF\x01"      /* TTL=255, proto=UDP */
+"\x40\x01"      /* TTL=255, proto=UDP */
 "\xFF\xFF"      /* checksum */
 "\0\0\0\0"      /* source address */
 "\0\0\0\0"      /* destination address */
