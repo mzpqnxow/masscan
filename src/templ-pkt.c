@@ -32,7 +32,7 @@ static unsigned char default_tcp_template[] =
     "\x00\x2c"      /* total length = 44 bytes */
     "\x00\x00"      /* identification */
     "\x00\x00"      /* fragmentation flags */
-    "\x40\x06"      /* TTL=64, proto=TCP */
+    "\xFF\x06"      /* TTL=255, proto=TCP */
     "\xFF\xFF"      /* checksum */
     "\0\0\0\0"      /* source address */
     "\0\0\0\0"      /* destination address */
